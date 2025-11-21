@@ -1,0 +1,37 @@
+.Search-container{
+    padding:20px 0;
+    width:100%;
+    display:flex;
+    justify-content: center;
+   
+}
+
+.Search-bar{
+    position:relative;
+    
+}
+.Search-bar> input{
+    width:50vw;
+    height:40px;
+    border-radius:20px;
+    padding-left:20px;
+    font-size:1.5rem;
+}
+.Search-bar>button{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform: translateY(-50%);
+    border-radius:20px;
+    width:10%;
+    height:40px;
+    background-color: var(--ascent-color);
+    color:var(--text-color);
+    font-weight:bolder;
+    font-size:1.25rem;
+    transition: all 0.3s ease;
+}
+
+.Search-bar>button:hover{
+    font-size:1rem;
+}
