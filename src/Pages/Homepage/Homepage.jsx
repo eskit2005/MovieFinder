@@ -5,7 +5,7 @@ import Search from './Search.jsx';
 import Card from './Card.jsx';
 import './Homepage.css';
 function Homepage() {
-    const [movieList, setMovieList] = useState([]);
+    const [popularMovieList, setPopularMovieList] = useState([]);
     const [error, setError] = useState(false);
     const url = 'https://api.themoviedb.org/3';
     const api_key = '68249dbc79f675fdde167aced2b632b8';
@@ -16,10 +16,8 @@ function Homepage() {
                 const response = await fetch(`${url}/movie/popular?api_key=${api_key}`);
                 if (!response.ok) throw new Error("Http error")
                 const data = await response.json();
-            console.log(data.results);
-            let value=data.results;
-
-            setMovieList((prev)=> [...prev,...value]);
+                console.log(data.results);
+                setPopularMovieList(data.results);
             }
             catch (err) {
                 setError(true);
@@ -34,8 +32,8 @@ function Homepage() {
             <Header />
             {/* <Herosection/> */}
             <Search />
-            <div className="cards">
-                {movieList.map((movie) => (
+            <div className="cards-grid">
+                {popularMovieList.map((movie) => (
                     <Card movie={movie} key={movie.id} />
                 ))}
             </div>
