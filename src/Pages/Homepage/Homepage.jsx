@@ -16,8 +16,10 @@ function Homepage() {
                 const response = await fetch(`${url}/movie/popular?api_key=${api_key}`);
                 if (!response.ok) throw new Error("Http error")
                 const data = await response.json();
-                setMovieList((prev)=>[...prev,data.results]);
-                console.log(data.results);
+            console.log(data.results);
+            let value=data.results;
+
+            setMovieList((prev)=> [...prev,...value]);
             }
             catch (err) {
                 setError(true);
@@ -33,13 +35,11 @@ function Homepage() {
             {/* <Herosection/> */}
             <Search />
             <div className="cards">
-                {movieList.map((movie,index)=>{
-                    return (
-                        <Card movie={movie} key={index}/>
-                    )
-                })}
+                {movieList.map((movie) => (
+                    <Card movie={movie} key={movie.id} />
+                ))}
             </div>
-            
+
 
         </>
     )
