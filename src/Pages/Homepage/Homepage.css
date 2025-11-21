@@ -1,5 +1,26 @@
 .cards-grid{
+    padding:20px;
     display:grid;
     grid-template-columns: repeat(4,1fr);
     gap:10px;
+}
+
+.loading{
+    font-size:2rem;
+    display:flex;
+    flex:1;
+    text-align: center;
+    color:var(--text-color);
+    font-weight: bold;
+    justify-content: center;
+}
+
+.error{
+    font-size:2rem;
+    display:flex;
+    flex:1;
+    text-align: center;
+    color:var(--text-color);
+    font-weight: bold;
+    justify-content: center;
 }

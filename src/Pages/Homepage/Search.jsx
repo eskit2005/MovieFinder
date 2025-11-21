@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { SearchContext } from "./Homepage.jsx";
 import './Search.css';
+
 function Search(){
-    const [inputText,setInputText]=useState("");
+    const {inputText,setInputText}=useContext(SearchContext);
 
     function handleClick(){
+
         setInputText("");
     }
     return(
