@@ -28,7 +28,7 @@ function Card({movie}){
             </div>
 
             <div className="favorite-btn">
-                <button> {isFavorite() ? "💖" : "🤍"}</button>
+                <button onClick={togglingFavorite}> {isFavorite() ? "💖" : "🤍"}</button>
             </div>
         </div>
     )

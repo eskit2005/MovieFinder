@@ -9,11 +9,13 @@ function Favorite() {
         <>
             <Header />
             <h1 className="heading">Favorite Movies</h1>
-            {favoriteMovieList.map((movie) => {
-                return (
-                    <Card movie={movie} key={movie.id} />
-                )
-            })}
+            <div className="cards-grid">
+                {favoriteMovieList.map((movie) => {
+                    return (
+                        <Card movie={movie} key={movie.id} />
+                    )
+                })}
+            </div>
 
         </>
     )

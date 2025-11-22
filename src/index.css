@@ -11,3 +11,10 @@ body{
   --ascent-color:hsl(240, 100%, 60%);
   --small-text-color:hsl(0, 0%, 90%);
 }
+
+.cards-grid{
+    padding:20px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+}
