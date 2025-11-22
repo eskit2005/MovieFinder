@@ -4,7 +4,7 @@
     height:100%;
     box-sizing: border-box;
     /* border:2px solid blue; */
-    transition: transform 0.3s ease-in;
+    transition: all 0.3s ease-in;
 }
 .card-container>img{
     object-fit: cover;
@@ -36,9 +36,26 @@
 }
 
 
-.favorite-btn{
-   
-    right:0;
-    top:0;
+/* UPDATED FAVORITE BUTTON */
+.favorite-btn {
+    position: absolute;
+    top: 10px;      /* distance from top */
+    right: 10px;    /* distance from right */
+    z-index: 10;    /* make sure it's above image */
+}
 
+.favorite-btn button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    opacity:0;
+}
+
+.card-container:hover .favorite-btn button{
+    opacity:1;
+}
+.favorite-btn button:hover {
+    transform: scale(1.2);
 }

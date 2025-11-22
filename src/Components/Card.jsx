@@ -27,7 +27,7 @@ function Card({movie}){
                 <p><i><b>☆ Rating {movie.vote_average.toFixed(2)}</b></i></p>
             </div>
 
-            <div className={`favorite-btn${(isFavorite()) ? 'clicked': ''}`}>
+            <div className="favorite-btn">
                 <button> {isFavorite() ? "💖" : "🤍"}</button>
             </div>
         </div>
