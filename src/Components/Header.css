@@ -33,13 +33,13 @@
     height: auto;
 }
 
-.header-links a{
+.header-links Link{
     color:var(--text-color);
     text-decoration: none;
     transition: all 0.5s ease;
 }
 
-.header-links a:hover{
+.header-links Link:hover{
     transform: scale(.95);
     color:var(--ascent-color);
 }

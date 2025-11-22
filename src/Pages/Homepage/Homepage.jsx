@@ -2,7 +2,7 @@ import { useState, useEffect, createContext } from 'react';
 import Header from '../../Components/Header.jsx';
 import Herosection from './Herosection.jsx';
 import Search from './Search.jsx';
-import Card from './Card.jsx';
+import Card from '../../Components/Card.jsx';
 import './Homepage.css';
 
 export const SearchContext = createContext(null);
@@ -59,7 +59,7 @@ function Homepage() {
             }
             catch (err) {
                 console.error(err);
-                setError("Not movies were found");
+                setError("No movies were found");
             }
             finally {
                 setLoading(false);
