@@ -5,10 +5,10 @@ import './index.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <HashRouterRouter>
+  <HashRouter>
     <StrictMode>
       <App />
     </StrictMode>,
-  </HashRouterRouter>
+  </HashRouter>
   
 )
