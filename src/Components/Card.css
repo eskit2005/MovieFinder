@@ -34,3 +34,11 @@
 .card-container:hover{
     transform: scale(0.95);
 }
+
+
+.favorite-btn{
+   
+    right:0;
+    top:0;
+
+}

@@ -1,24 +1,20 @@
-import { createContext,useState } from "react";
+import { useContext } from "react";
 import Header from "../../Components/Header";
 import Card from "../../Components/Card";
+import { FavoriteContext } from "../../Context/FavoriteContext";
 import './Favorite.css';
-
-export const FavoriteContext=createContext(null);
-function Favorite(){
-    const[favoriteMovieList,setFavoriteMovieList]=useState(null);
-    return(
+function Favorite() {
+    const {favoriteMovieList,setFavoriteMovieList}=useContext(FavoriteContext);
+    return (
         <>
-            <FavoriteContext value={{favoriteMovieList,setFavorteMovieList}}>
-                <Card/>
-            </FavoriteContext>
-           
-            <Header/>
-            <h3 className="heading">Favorite Movies</h3>
-            {favoriteMovieList.map((movie)=>{
+            <Header />
+            <h1 className="heading">Favorite Movies</h1>
+            {favoriteMovieList.map((movie) => {
                 return (
-                    <Card movie={movie} key={movie.id}/>
+                    <Card movie={movie} key={movie.id} />
                 )
             })}
+
         </>
     )
 }

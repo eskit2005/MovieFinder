@@ -1,15 +1,15 @@
 import { useContext } from 'react';
-import { FavoriteContext } from '../Pages/Favorite/Favorite';
+import { FavoriteContext } from '../Context/FavoriteContext';
 import './Card.css';
 function Card({movie}){
-    const[favoriteMovieList,setFavoriteMovieList]=useContext(FavoriteContext);
+    const{favoriteMovieList,setFavoriteMovieList}=useContext(FavoriteContext);
     
     const isFavorite=()=> (
         favoriteMovieList.some((favorite)=> favorite.id===movie.id)
     );
 
     function togglingFavorite(){
-        if(isFavorite){
+        if(isFavorite()){
             setFavoriteMovieList((favoriteMovieList)=>favoriteMovieList.filter((favorite)=>favorite.id!=movie.id));
         }
         else{
@@ -27,8 +27,8 @@ function Card({movie}){
                 <p><i><b>☆ Rating {movie.vote_average.toFixed(2)}</b></i></p>
             </div>
 
-            <div className={`favourite-btn${(isFavorite) ? 'clicked': ''}`}>
-                <button></button>
+            <div className={`favorite-btn${(isFavorite()) ? 'clicked': ''}`}>
+                <button> {isFavorite() ? "💖" : "🤍"}</button>
             </div>
         </div>
     )

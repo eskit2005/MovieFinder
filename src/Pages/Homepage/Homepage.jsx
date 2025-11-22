@@ -69,7 +69,8 @@ function Homepage() {
     }, [inputText]);
 
     return (
-        <>
+        <>  
+            
             <Header />
             {/* <Herosection/> */}
             <SearchContext value={{ inputText, setInputText }}>
